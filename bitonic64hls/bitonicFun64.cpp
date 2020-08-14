@@ -3,7 +3,7 @@
 
 //Main CAE block (compare and exchange)
 GreaterSmaller AscendDescend(const din_t &x, const din_t &y){
-#pragma HLS PIPELINE
+#pragma HLS PIPELINE II=9
 #pragma HLS INLINE
     GreaterSmaller s;
 
@@ -17,7 +17,7 @@ GreaterSmaller AscendDescend(const din_t &x, const din_t &y){
 
 void FourinSmallFirInc(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3,
 					din_t &y0, din_t &y1, din_t &y2, din_t &y3){
-   #pragma HLS PIPELINE
+   #pragma HLS PIPELINE II=9
    #pragma HLS INLINE
     GreaterSmaller res1;
         res1 = AscendDescend(x0, x2);
@@ -29,7 +29,7 @@ void FourinSmallFirInc(const din_t &x0, const din_t &x1, const din_t &x2, const 
 
 void FourinGreatFirInc(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3,
 					din_t &y0, din_t &y1, din_t &y2, din_t &y3){
-   #pragma HLS PIPELINE
+   #pragma HLS PIPELINE II=9
    #pragma HLS INLINE
     GreaterSmaller res2;
         res2 = AscendDescend(x0, x2);
@@ -41,7 +41,7 @@ void FourinGreatFirInc(const din_t &x0, const din_t &x1, const din_t &x2, const 
 
 void EightinSmallFirInc(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3, const din_t &x4, const din_t &x5,
                 const din_t &x6, const din_t &x7, din_t &y0, din_t &y1, din_t &y2, din_t &y3, din_t &y4, din_t &y5, din_t &y6, din_t &y7){
-        #pragma HLS PIPELINE
+        #pragma HLS PIPELINE II=9
         #pragma HLS INLINE
         GreaterSmaller res3;
         res3 = AscendDescend(x0, x4);
@@ -60,7 +60,7 @@ void EightinSmallFirInc(const din_t &x0, const din_t &x1, const din_t &x2, const
 
 void EightinGreatFirInc(const din_t &x8, const din_t &x9, const din_t &x10, const din_t &x11, const din_t &x12, const din_t &x13,
                 const din_t &x14, const din_t &x15, din_t &y8, din_t &y9, din_t &y10, din_t &y11, din_t &y12, din_t &y13, din_t &y14, din_t &y15){
-        #pragma HLS PIPELINE
+        #pragma HLS PIPELINE II=9
        	#pragma HLS INLINE
         GreaterSmaller res4;
         res4 = AscendDescend(x8, x12);
@@ -81,8 +81,8 @@ void SixteenSmallFirInc(const din_t &x0, const din_t &x1, const din_t &x2, const
                      const din_t &x6, const din_t &x7, const din_t &x8, const din_t &x9, const din_t &x10, const din_t &x11, const din_t &x12, 
                      const din_t &x13, const din_t &x14, const din_t &x15, din_t &y0, din_t &y1, din_t &y2, din_t &y3, din_t &y4, din_t &y5, din_t &y6, 
                     din_t &y7, din_t &y8, din_t &y9, din_t &y10, din_t &y11, din_t &y12, din_t &y13, din_t &y14, din_t &y15){
-                    
-        #pragma HLS PIPELINE
+                     
+        #pragma HLS PIPELINE II=9
         #pragma HLS INLINE
         GreaterSmaller res5;
 
@@ -116,7 +116,7 @@ void SixteenGreatFirInc(const din_t &x16, const din_t &x17, const din_t &x18, co
                      const din_t &x29, const din_t &x30, const din_t &x31, din_t &y16, din_t &y17, din_t &y18, din_t &y19, din_t &y20, din_t &y21, din_t &y22, 
                     din_t &y23, din_t &y24, din_t &y25, din_t &y26, din_t &y27, din_t &y28, din_t &y29, din_t &y30, din_t &y31){
                     
-        #pragma HLS PIPELINE
+        #pragma HLS PIPELINE II=9
         #pragma HLS INLINE
         GreaterSmaller res6;
 
@@ -149,7 +149,7 @@ void SixteenGreatFirInc(const din_t &x16, const din_t &x17, const din_t &x18, co
 
 void FourinSmallFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3,
 					din_t &y0, din_t &y1, din_t &y2, din_t &y3){
-   #pragma HLS PIPELINE
+   #pragma HLS PIPELINE II=9
    #pragma HLS INLINE
     GreaterSmaller res7;
         res7 = AscendDescend(x0, x2);
@@ -161,7 +161,7 @@ void FourinSmallFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const 
 
 void FourinGreatFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3,
 					din_t &y0, din_t &y1, din_t &y2, din_t &y3){
-   #pragma HLS PIPELINE
+   #pragma HLS PIPELINE II=9
    #pragma HLS INLINE
     GreaterSmaller res8;
         res8 = AscendDescend(x0, x2);
@@ -173,7 +173,7 @@ void FourinGreatFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const 
 
 void EightinSmallFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3, const din_t &x4, const din_t &x5,
                 const din_t &x6, const din_t &x7, din_t &y0, din_t &y1, din_t &y2, din_t &y3, din_t &y4, din_t &y5, din_t &y6, din_t &y7){
-        #pragma HLS PIPELINE
+        #pragma HLS PIPELINE II=9
         #pragma HLS INLINE
         GreaterSmaller res9;
         res9 = AscendDescend(x0, x4);
@@ -192,7 +192,7 @@ void EightinSmallFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const
 
 void EightinGreatFirDec(const din_t &x8, const din_t &x9, const din_t &x10, const din_t &x11, const din_t &x12, const din_t &x13,
                 const din_t &x14, const din_t &x15, din_t &y8, din_t &y9, din_t &y10, din_t &y11, din_t &y12, din_t &y13, din_t &y14, din_t &y15){
-        #pragma HLS PIPELINE
+        #pragma HLS PIPELINE II=9
        	#pragma HLS INLINE
         GreaterSmaller res10;
         res10 = AscendDescend(x8, x12);
@@ -214,7 +214,7 @@ void SixteenSmallFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const
                      const din_t &x13, const din_t &x14, const din_t &x15, din_t &y0, din_t &y1, din_t &y2, din_t &y3, din_t &y4, din_t &y5, din_t &y6, 
                     din_t &y7, din_t &y8, din_t &y9, din_t &y10, din_t &y11, din_t &y12, din_t &y13, din_t &y14, din_t &y15){
                     
-        #pragma HLS PIPELINE
+        #pragma HLS PIPELINE II+9
         #pragma HLS INLINE
         GreaterSmaller res11;
 
@@ -248,7 +248,7 @@ void SixteenGreatFirDec(const din_t &x16, const din_t &x17, const din_t &x18, co
                      const din_t &x29, const din_t &x30, const din_t &x31, din_t &y16, din_t &y17, din_t &y18, din_t &y19, din_t &y20, din_t &y21, din_t &y22, 
                     din_t &y23, din_t &y24, din_t &y25, din_t &y26, din_t &y27, din_t &y28, din_t &y29, din_t &y30, din_t &y31){
                     
-        #pragma HLS PIPELINE
+        #pragma HLS PIPELINE II=9
         #pragma HLS INLINE
         GreaterSmaller res12;
 
