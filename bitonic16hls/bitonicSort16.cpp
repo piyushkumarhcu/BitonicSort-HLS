@@ -2,7 +2,7 @@
 
 //Main CAE block (compare and exchange)
 GreaterSmaller AscendDescend(const din_t &x, const din_t &y){
-#pragma HLS PIPELINE
+#pragma HLS PIPELINE II=9
 #pragma HLS INLINE
     GreaterSmaller s;
 
@@ -14,7 +14,7 @@ GreaterSmaller AscendDescend(const din_t &x, const din_t &y){
 
 void FourinSmallFir(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3,
 					din_t &y0, din_t &y1, din_t &y2, din_t &y3){
-   #pragma HLS PIPELINE
+   #pragma HLS PIPELINE II=9
    #pragma HLS INLINE
     GreaterSmaller res1;
         res1 = AscendDescend(x0, x2);
@@ -26,7 +26,7 @@ void FourinSmallFir(const din_t &x0, const din_t &x1, const din_t &x2, const din
 
 void FourinGreatFir(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3,
 					din_t &y0, din_t &y1, din_t &y2, din_t &y3){
-   #pragma HLS PIPELINE
+   #pragma HLS PIPELINE II=9
    #pragma HLS INLINE
     GreaterSmaller res2;
         res2 = AscendDescend(x0, x2);
@@ -38,7 +38,7 @@ void FourinGreatFir(const din_t &x0, const din_t &x1, const din_t &x2, const din
 
 void EightinSmallFir(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3, const din_t &x4, const din_t &x5,
                 const din_t &x6, const din_t &x7, din_t &y0, din_t &y1, din_t &y2, din_t &y3, din_t &y4, din_t &y5, din_t &y6, din_t &y7){
-        #pragma HLS PIPELINE
+        #pragma HLS PIPELINE II=9
         #pragma HLS INLINE
         GreaterSmaller res3;
         res3 = AscendDescend(x0, x4);
@@ -57,7 +57,7 @@ void EightinSmallFir(const din_t &x0, const din_t &x1, const din_t &x2, const di
 
 void EightinGreatFir(const din_t &x8, const din_t &x9, const din_t &x10, const din_t &x11, const din_t &x12, const din_t &x13,
                 const din_t &x14, const din_t &x15, din_t &y8, din_t &y9, din_t &y10, din_t &y11, din_t &y12, din_t &y13, din_t &y14, din_t &y15){
-        #pragma HLS PIPELINE
+        #pragma HLS PIPELINE II=9
        	#pragma HLS INLINE
         GreaterSmaller res4;
         res4 = AscendDescend(x8, x12);
@@ -75,7 +75,7 @@ void EightinGreatFir(const din_t &x8, const din_t &x9, const din_t &x10, const d
 }
 
 void bitonicSort16(din_t in[N], din_t out[N]){
-
+#pragma HLS PIPELINE II=9
 #pragma HLS ARRAY_PARTITION variable=in
 #pragma HLS ARRAY_PARTITION variable=out
 
