@@ -214,7 +214,7 @@ void SixteenSmallFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const
                      const din_t &x13, const din_t &x14, const din_t &x15, din_t &y0, din_t &y1, din_t &y2, din_t &y3, din_t &y4, din_t &y5, din_t &y6, 
                     din_t &y7, din_t &y8, din_t &y9, din_t &y10, din_t &y11, din_t &y12, din_t &y13, din_t &y14, din_t &y15){
                     
-        #pragma HLS PIPELINE II+9
+        #pragma HLS PIPELINE II=9
         #pragma HLS INLINE
         GreaterSmaller res11;
 
