@@ -2,6 +2,7 @@
 
 void bitonic32Inc(din_t in1[N], din_t out1[N]){
 
+#pragma HLS PIPELINE II=9
 #pragma HLS ARRAY_PARTITION variable=in1
 #pragma HLS ARRAY_PARTITION variable=out1
 
