@@ -40,7 +40,7 @@ void bitonicSort64(din_t in[M], din_t out[M]){
 
 //.....................Starting firts sorting stage.............................//
 
-for(dloop_t i=0; i<N/2; i++){
+for(dloop_t i=0; i<M/2; i++){
     #pragma HLS UNROLL
     result = AscendDescend(r[i], r[i+M/2]);
     s[i] = result.smaller; s[i+M/2] = result.greater;
@@ -74,8 +74,8 @@ for(dloop_t i=0; i<M/16; i++){
 
 for(dloop_t i=0; i<M/8; i++){
     #pragma HLS UNROLL
-    EightinSmallFirInc(u[16*i], u[16*i+1], u[16*i+2], u[16*i+3], u[16*i+4], u[16*i+5], u[16*i+6], u[16*i+7],
-                v[16*i], v[16*i+1], v[16*i+2], v[16*i+3], v[16*i+4], v[16*i+5], v[16*i+6], v[16*i+7]);
+    EightinSmallFirInc(u[8*i], u[8*i+1], u[8*i+2], u[8*i+3], u[8*i+4], u[8*i+5], u[8*i+6], u[8*i+7],
+                v[8*i], v[8*i+1], v[8*i+2], v[8*i+3], v[8*i+4], v[8*i+5], v[8*i+6], v[8*i+7]);
 }
 
 //.....................Starting fifth sorting stage............................//
