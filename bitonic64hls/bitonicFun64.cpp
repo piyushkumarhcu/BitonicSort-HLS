@@ -167,7 +167,7 @@ void FourinGreatFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const 
         res8 = AscendDescend(x0, x2);
         y0 = res8.smaller; y2 = res8.greater;
 
-        res2 = AscendDescend(x1, x3);
+        res8 = AscendDescend(x1, x3);
         y1 = res8.smaller; y3 = res8.greater;
 }
 
@@ -179,13 +179,13 @@ void EightinSmallFirDec(const din_t &x0, const din_t &x1, const din_t &x2, const
         res9 = AscendDescend(x0, x4);
         y0 = res9.greater; y4 = res9.smaller;
 
-        res3 = AscendDescend(x1, x5);
+        res9 = AscendDescend(x1, x5);
         y1 = res9.greater; y5 = res9.smaller;
 
-        res3 = AscendDescend(x2, x6);
+        res9 = AscendDescend(x2, x6);
         y2 = res9.greater; y6 = res9.smaller;
 
-        res3 = AscendDescend(x3, x7);
+        res9 = AscendDescend(x3, x7);
         y3 = res9.greater; y7 = res9.smaller;
 
 }
@@ -201,10 +201,10 @@ void EightinGreatFirDec(const din_t &x8, const din_t &x9, const din_t &x10, cons
         res10 = AscendDescend(x9, x13);
         y9 = res10.smaller; y13 = res10.greater;
 
-        res4 = AscendDescend(x10, x14);
+        res10 = AscendDescend(x10, x14);
         y10 = res10.smaller; y14 = res10.greater;
 
-        res4 = AscendDescend(x11, x15);
+        res10 = AscendDescend(x11, x15);
         y11 = res10.smaller; y15= res10.greater;
 
 }
