@@ -14,7 +14,7 @@ int main()
                 cout << "numbers are: " << in[h] << endl;
         } 
         
-    bitonicSort(in, out);
+    bitonicSort64(in, out);
     
     for(int i=0; i<M; i++){
 	cout << out[i] << " ";
