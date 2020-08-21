@@ -3,8 +3,8 @@
 void bitonic32Dec(din_t in2[N], din_t out2[N]){
 
 #pragma HLS PIPELINE II=9
-#pragma HLS ARRAY_PARTITION variable=in
-#pragma HLS ARRAY_PARTITION variable=out
+#pragma HLS ARRAY_PARTITION variable=in2
+#pragma HLS ARRAY_PARTITION variable=out2
 
 GreaterSmaller result;
 
