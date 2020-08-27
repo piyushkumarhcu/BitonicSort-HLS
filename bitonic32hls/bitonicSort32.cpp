@@ -211,6 +211,7 @@ for(dloop_t i=0; i<N/8; i++){
 //.....................Starting fourth stage..............................//
 
 for(dloop_t i=0; i<N/16; i++){
+    #pragma HLS unroll
 EightinSmallFir(c[16*i+0], c[16*i+1], c[16*i+2], c[16*i+3], c[16*i+4], c[16*i+5], c[16*i+6], c[16*i+7],
                  d[16*i+0], d[16*i+1], d[16*i+2], d[16*i+3], d[16*i+4], d[16*i+5], d[16*i+6], d[16*i+7]);
 EightinGreatFir(c[16*i+8], c[16*i+9], c[16*i+10], c[16*i+11], c[16*i+12], c[16*i+13], c[16*i+14], c[16*i+15],
