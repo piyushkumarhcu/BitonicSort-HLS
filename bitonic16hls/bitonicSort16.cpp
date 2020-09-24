@@ -16,61 +16,61 @@ void FourinSmallFir(const din_t &x0, const din_t &x1, const din_t &x2, const din
 					din_t &y0, din_t &y1, din_t &y2, din_t &y3){
    #pragma HLS PIPELINE II=9
    #pragma HLS INLINE
-    GreaterSmaller res1;
-        res1 = AscendDescend(x0, x2);
-        y0 = res1.smaller; y2 = res1.greater;
+    GreaterSmaller res;
+        res = AscendDescend(x0, x2);
+        y0 = res.smaller; y2 = res.greater;
 
-        res1 = AscendDescend(x1, x3);
-        y1 = res1.smaller; y3 = res1.greater;
+        res = AscendDescend(x1, x3);
+        y1 = res.smaller; y3 = res.greater;
 }
 
 void FourinGreatFir(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3,
 					din_t &y0, din_t &y1, din_t &y2, din_t &y3){
    #pragma HLS PIPELINE II=9
    #pragma HLS INLINE
-    GreaterSmaller res2;
-        res2 = AscendDescend(x0, x2);
-        y0 = res2.greater; y2 = res2.smaller;
+    GreaterSmaller res;
+        res = AscendDescend(x0, x2);
+        y0 = res.greater; y2 = res.smaller;
 
-        res2 = AscendDescend(x1, x3);
-        y1 = res2.greater; y3 = res2.smaller;
+        res = AscendDescend(x1, x3);
+        y1 = res.greater; y3 = res.smaller;
 }
 
 void EightinSmallFir(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3, const din_t &x4, const din_t &x5,
                 const din_t &x6, const din_t &x7, din_t &y0, din_t &y1, din_t &y2, din_t &y3, din_t &y4, din_t &y5, din_t &y6, din_t &y7){
         #pragma HLS PIPELINE II=9
         #pragma HLS INLINE
-        GreaterSmaller res3;
-        res3 = AscendDescend(x0, x4);
-        y0 = res3.smaller; y4 = res3.greater;
+        GreaterSmaller res;
+        res = AscendDescend(x0, x4);
+        y0 = res.smaller; y4 = res.greater;
 
-        res3 = AscendDescend(x1, x5);
-        y1 = res3.smaller; y5 = res3.greater;
+        res = AscendDescend(x1, x5);
+        y1 = res.smaller; y5 = res.greater;
 
-        res3 = AscendDescend(x2, x6);
-        y2 = res3.smaller; y6 = res3.greater;
+        res = AscendDescend(x2, x6);
+        y2 = res.smaller; y6 = res.greater;
 
-        res3 = AscendDescend(x3, x7);
-        y3 = res3.smaller; y7 = res3.greater;
+        res = AscendDescend(x3, x7);
+        y3 = res.smaller; y7 = res.greater;
 
 }
 
-void EightinGreatFir(const din_t &x8, const din_t &x9, const din_t &x10, const din_t &x11, const din_t &x12, const din_t &x13,
-                const din_t &x14, const din_t &x15, din_t &y8, din_t &y9, din_t &y10, din_t &y11, din_t &y12, din_t &y13, din_t &y14, din_t &y15){
+void EightinGreatFir(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3, const din_t &x4, const din_t &x5,
+                const din_t &x6, const din_t &x7, din_t &y0, din_t &y1, din_t &y2, din_t &y3, din_t &y4, din_t &y5, din_t &y6, din_t &y7){
         #pragma HLS PIPELINE II=9
        	#pragma HLS INLINE
-        GreaterSmaller res4;
-        res4 = AscendDescend(x8, x12);
-        y8 = res4.greater; y12 = res4.smaller;
+        GreaterSmaller res;
+        res = AscendDescend(x0, x4);
+        y0 = res.greater; y4 = res.smaller;
 
-        res4 = AscendDescend(x9, x13);
-        y9 = res4.greater; y13 = res4.smaller;
+        res = AscendDescend(x1, x5);
+        y1 = res.greater; y5 = res.smaller;
 
-        res4 = AscendDescend(x10, x14);
-        y10 = res4.greater; y14 = res4.smaller;
+        res = AscendDescend(x2, x6);
+        y2 = res.greater; y6 = res.smaller;
 
-        res4 = AscendDescend(x11, x15);
-        y11 = res4.greater; y15= res4.smaller;
+        res = AscendDescend(x3, x7);
+        y3 = res.greater; y7= res.smaller;
 
 }
 
