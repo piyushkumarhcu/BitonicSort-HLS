@@ -19,12 +19,12 @@ void FourinSmallFirInc(const din_t &x0, const din_t &x1, const din_t &x2, const 
 					din_t &y0, din_t &y1, din_t &y2, din_t &y3){
    #pragma HLS PIPELINE II=9
    #pragma HLS INLINE
-    GreaterSmaller res1;
-        res1 = AscendDescend(x0, x2);
-        y0 = res1.smaller; y2 = res1.greater;
+    GreaterSmaller res;
+        res = AscendDescend(x0, x2);
+        y0 = res.smaller; y2 = res.greater;
 
-        res1 = AscendDescend(x1, x3);
-        y1 = res1.smaller; y3 = res1.greater;
+        res = AscendDescend(x1, x3);
+        y1 = res.smaller; y3 = res.greater;
 }
 
 void FourinGreatFirInc(const din_t &x0, const din_t &x1, const din_t &x2, const din_t &x3,
