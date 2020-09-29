@@ -3,8 +3,8 @@
 void bitonicSort256(din_t in[P], din_t out[P]){
     #pragma HLS PIPELINE II=9
 
-    #pragma HLS ARRAY_PARTITION variable=in
-    #pragma HLS ARRAY_PARTITION variable=out
+    #pragma HLS ARRAY_RESHAPE variable=in complete dim=1
+    #pragma HLS ARRAY_RESHAPE variable=out complete dim=1
 
     GreaterSmaller result;
 
